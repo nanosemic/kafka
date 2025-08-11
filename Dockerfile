@@ -1,6 +1,3 @@
-FROM node:20-alpine
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-CMD ["npm", "start"]
+FROM docker/compose:alpine
+COPY docker-compose.yml /docker-compose.yml
+CMD ["docker-compose", "up"]
